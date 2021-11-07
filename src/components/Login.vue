@@ -6,7 +6,21 @@
 
 <script>
   export default {
-    name: 'Login'
+    name: 'Login',
+    mounted(){
+      // this.$request({
+      //   method:'get',
+      //   url: '/login',
+      //   data:{
+      //     name:'blank'
+      //   }
+      // }).then(res => {
+      //   console.log(res);
+      // })
+      this.$request.get('/login',{name:'jack'},{mock:true,loading:true}).then(res => {
+        console.log(res);
+      })
+    }
   }
 </script>
 
